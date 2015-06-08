@@ -1,0 +1,31 @@
+{
+    "name": "promise-a-plus",
+    "version": "0.1.0",
+    "description": "A JavaScript Promise/A+ Library.",
+    "main": "promise.js",
+    "devDependencies": {
+        "promises-aplus-tests": "*"
+    },
+    "scripts": {
+        "test": "promises-aplus-tests test_adapter.js"
+    },
+    "keywords": [
+        "promise",
+        "native-promise",
+        "Promise/A+"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git@github.com:creeperyang/promise-a-plus.git"
+    },
+    "engines": {
+        "node": ">= 0.8.0"
+    },
+    "author": {
+        "name": "creeperyang",
+        "email": "pashanhu6@hotmail.com",
+        "url": "http://creeperyang.github.io"
+    },
+    "author": "creeperyang",
+    "license": "MIT"
+}
