@@ -1,11 +1,18 @@
-#promise-a-plus[![Build Status](https://travis-ci.org/creeperyang/promise-a-plus.svg?branch=master)](https://travis-ci.org/creeperyang/promise-a-plus)
+# promise-a-plus[![Build Status](https://travis-ci.org/creeperyang/promise-a-plus.svg?branch=master)](https://travis-ci.org/creeperyang/promise-a-plus)
 
 This is a pure js implementation of Promises. It is a polyfill of ES6 Promises if ES6 is not supported.
 
 **Note**: The implementation is surely [Promises/A+](https://promisesaplus.com/) conformant, so it will work well with other unstandard promises libraries.
 
+## Installation
 
-##API and Usage
+You can get the package easily via `npm`:
+
+```shell
+npm install promise-a-plus --save
+```
+
+## API and Usage
 
 Firstly import the library:
 
@@ -13,22 +20,24 @@ Firstly import the library:
 var Promise = require('promise-a-plus');
 ```
 
+The library's API is absolutely consistent with official API.
+
 ### new Promise(executor)
 
-http://devdocs.io/javascript/global_objects/promise
+<http://devdocs.io/javascript/global_objects/promise>
 
 ### then(onFulfilled, onRejected)
 
-http://devdocs.io/javascript/global_objects/promise/then
+<http://devdocs.io/javascript/global_objects/promise/then>
 
 
 ### Promise.resolve(value)
 
-http://devdocs.io/javascript/global_objects/promise/resolve
+<http://devdocs.io/javascript/global_objects/promise/resolve>
 
-### Promise.resolve(reason)
+### Promise.reject(reason)
 
-http://devdocs.io/javascript/global_objects/promise/reject
+<http://devdocs.io/javascript/global_objects/promise/reject>
 
 
 ## Release History
