@@ -30,6 +30,10 @@ The library's API is absolutely consistent with official API.
 
 <http://devdocs.io/javascript/global_objects/promise/then>
 
+### catch(onRejected)
+
+<http://devdocs.io/javascript/global_objects/promise/catch>
+
 
 ### Promise.resolve(value)
 
@@ -41,6 +45,8 @@ The library's API is absolutely consistent with official API.
 
 
 ## Release History
+
+2015-06-11&nbsp;&nbsp;&nbsp;&nbsp;`v0.2.0`&nbsp;&nbsp;&nbsp;&nbsp;add promise.catch
 
 2015-06-08&nbsp;&nbsp;&nbsp;&nbsp;`v0.1.0`&nbsp;&nbsp;&nbsp;&nbsp;init
 
