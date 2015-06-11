@@ -67,7 +67,7 @@ function Promise(executor) {
         }, 0);
     };
 
-    this.then = function(onFulfilled, onRejected) {
+    var then = function(onFulfilled, onRejected) {
         var self = this;
         var res;
         var npromise = new Promise(function(resolve, reject) {
@@ -102,6 +102,12 @@ function Promise(executor) {
             });
         });
         return npromise;
+    };
+
+    this.then = then;
+
+    this.catch = function(onRejected) {
+        return then.call(this, undefined, onRejected);
     };
 
     doResolve(executor, resolve, reject);
