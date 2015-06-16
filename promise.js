@@ -185,4 +185,32 @@ Promise.reject = function(reason) {
     });
 };
 
+Promise.all = function(all) {
+    var results = [];
+    var len, promise, i;
+    var resolved = 0;
+    if(!all || !(len = all.length)) {
+        throw new Error('ArgumentsError: currently only array is allowed');
+    }
+    return new Promise(function(resolve, reject) {
+        for(i = 0; i < len; i++) {
+            (function(i) {
+                promise = all[i];
+                if(!(promise instanceof Promise)) {
+                    promise = Promise.resolve(promise);
+                }
+                promise.catch(function(reason) {
+                    reject(reason);
+                });
+                promise.then(function(value) {
+                    results[i] = value;
+                    if(++resolved === len) {
+                        resolve(results);
+                    }
+                });
+            })(i);
+        }
+    });
+}
+
 module.exports = Promise;

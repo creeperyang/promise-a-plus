@@ -9,7 +9,9 @@
     },
     "scripts": {
         "test": "promises-aplus-tests test_adapter.js && npm run customTest",
-        "customTest": "./node_modules/.bin/mocha -t 800"
+        "customTest": "./node_modules/.bin/mocha -t 800",
+        "customTestCatch": "./node_modules/.bin/mocha test/test_catch.js -t 800",
+        "customTestAll": "./node_modules/.bin/mocha test/test_all.js -t 800"
     },
     "keywords": [
         "promise",
