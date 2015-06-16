@@ -1,4 +1,6 @@
-# promise-a-plus[![Build Status](https://travis-ci.org/creeperyang/promise-a-plus.svg?branch=master)](https://travis-ci.org/creeperyang/promise-a-plus)
+# promise-a-plus
+
+[![Build Status](https://travis-ci.org/creeperyang/promise-a-plus.svg?branch=master)](https://travis-ci.org/creeperyang/promise-a-plus)
 
 This is a pure js implementation of Promises. It is a polyfill of ES6 Promises if ES6 is not supported.
 
@@ -43,8 +45,16 @@ The library's API is absolutely consistent with official API.
 
 <http://devdocs.io/javascript/global_objects/promise/reject>
 
+### Promise.all(array)
+
+<http://devdocs.io/javascript/global_objects/promise/all>
+
+Note: the `Promise.all` api may not be the same with official one, because currently the `argument` should be `array` only.
+
 
 ## Release History
+
+2015-06-16&nbsp;&nbsp;&nbsp;&nbsp;`v0.3.0`&nbsp;&nbsp;&nbsp;&nbsp;add Promise.all
 
 2015-06-11&nbsp;&nbsp;&nbsp;&nbsp;`v0.2.0`&nbsp;&nbsp;&nbsp;&nbsp;add promise.catch
 
