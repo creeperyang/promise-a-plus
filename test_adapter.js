@@ -7,12 +7,5 @@ module.exports = {
     rejected: function(reason) {
         return Promise.reject(reason);
     },
-    deferred: function() {
-        var o = {};
-        o.promise = new Promise(function(resolve,reject){
-            o.resolve = resolve;
-            o.reject = reject;
-        });
-        return o;
-    }
+    deferred: Promise.deferred
 };

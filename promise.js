@@ -211,6 +211,23 @@ Promise.all = function(all) {
             })(i);
         }
     });
-}
+};
+
+/**
+ * A useful api for Promise,
+ * return the `deferred` object binding to a promise. 
+ * And you can control the promise via `deferred.resolve`/`deferred.reject`.
+ *
+ * @param {Promise|Any} value
+ * @return {Function|Null}
+ */
+Promise.deferred = function() {
+    var deferred = {};
+    deferred.promise = new Promise(function(resolve,reject){
+        deferred.resolve = resolve;
+        deferred.reject = reject;
+    });
+    return deferred;
+};
 
 module.exports = Promise;
