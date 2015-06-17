@@ -51,8 +51,23 @@ The library's API is absolutely consistent with official API.
 
 Note: the `Promise.all` api may not be the same with official one, because currently the `argument` should be `array` only.
 
+### Promise.deferred
+
+This API is not official, but it's common and useful. It's somewhat like AngularJS's `$q.defer()` or jQuery's `jQuery.Deferred()`.
+
+```js
+// currently the related promise `deferred.promise` is still pending
+var deferred = Promise.deferred();
+// then you can resolve or reject the promise
+deferred.resolve(value); // deferred.reject(reason);
+// and promise is now fulfilled/rejected
+deferred.promise;
+```
+
 
 ## Release History
+
+2015-06-17&nbsp;&nbsp;&nbsp;&nbsp;`v0.4.0`&nbsp;&nbsp;&nbsp;&nbsp;add Promise.deferred
 
 2015-06-16&nbsp;&nbsp;&nbsp;&nbsp;`v0.3.0`&nbsp;&nbsp;&nbsp;&nbsp;add Promise.all
 
