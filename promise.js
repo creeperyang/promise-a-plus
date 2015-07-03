@@ -253,4 +253,8 @@ Promise.deferred = function() {
     return deferred;
 };
 
+// Official API (especially chrome) is Promise.defer
+// so just add Promise.defer and let it refer to Promise.deferred
+Promise.defer = Promise.deferred;
+
 module.exports = Promise;

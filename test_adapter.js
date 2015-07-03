@@ -7,5 +7,5 @@ module.exports = {
     rejected: function(reason) {
         return Promise.reject(reason);
     },
-    deferred: Promise.deferred
+    deferred: Promise.defer
 };
