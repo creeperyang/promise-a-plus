@@ -67,7 +67,7 @@ Note: the `Promise.all` api may not be the same with official one, because curre
 
 Note: the `Promise.race` api may not be the same with official one, because currently the `argument` should be `array` only.
 
-### Promise.deferred
+### Promise.deferred|Promise.defer
 
 This API is not official, but it's common and useful. It's somewhat like AngularJS's `$q.defer()` or jQuery's `jQuery.Deferred()`.
 
@@ -80,10 +80,11 @@ deferred.resolve(value); // deferred.reject(reason);
 deferred.promise;
 ```
 
+As chrome use `Promise.defer` as official API, `Promise.defer` is added to module(alias of `Promise.deferred`).
 
 ## Release History
 
-2015-06-17&nbsp;&nbsp;&nbsp;&nbsp;`v0.5.0`&nbsp;&nbsp;&nbsp;&nbsp;add Promise.race
+2015-07-03&nbsp;&nbsp;&nbsp;&nbsp;`v0.5.1`&nbsp;&nbsp;&nbsp;&nbsp;add Promise.race; add Promise.defer
 
 2015-06-17&nbsp;&nbsp;&nbsp;&nbsp;`v0.4.0`&nbsp;&nbsp;&nbsp;&nbsp;add Promise.deferred
 
