@@ -213,6 +213,29 @@ Promise.all = function(all) {
     });
 };
 
+// Returns a promise that resolves or rejects as soon as one of the promises in the iterable resolves or rejects, 
+// with the value or reason from that promise.
+Promise.race = function(array) {
+    var deferred;
+    if(!array || !array.length) {
+        throw new Error('ArgumentsError: currently only array is allowed');
+    }
+    deferred = Promise.deferred();
+    array.forEach(function(promise) {
+        if(promise instanceof Promise) {
+            promise.then(function(value) {
+                deferred.resolve(value);
+            }, function(reason) {
+                deferred.reject(reason);
+            });
+        } else {
+            // if not promise, immediately resolve result promise
+            deferred.resolve(promise);
+        }
+    });
+    return deferred.promise;
+};
+
 /**
  * A useful api for Promise,
  * return the `deferred` object binding to a promise. 

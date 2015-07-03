@@ -14,13 +14,23 @@ You can get the package easily via `npm`:
 npm install promise-a-plus --save
 ```
 
-## API and Usage
+## Usage
 
-Firstly import the library:
+### Use with node
+
+After install the module, import it and use with ease.
 
 ```js
 var Promise = require('promise-a-plus');
+// do whatever you like
+Promise.race([xxx]) // ...
 ```
+
+### Use inside browser
+
+Currently, you can use the module via `browserify`.
+
+## API
 
 The library's API is absolutely consistent with official API.
 
@@ -51,6 +61,12 @@ The library's API is absolutely consistent with official API.
 
 Note: the `Promise.all` api may not be the same with official one, because currently the `argument` should be `array` only.
 
+### Promise.race(array)
+
+<http://devdocs.io/javascript/global_objects/promise/race>
+
+Note: the `Promise.race` api may not be the same with official one, because currently the `argument` should be `array` only.
+
 ### Promise.deferred
 
 This API is not official, but it's common and useful. It's somewhat like AngularJS's `$q.defer()` or jQuery's `jQuery.Deferred()`.
@@ -66,6 +82,8 @@ deferred.promise;
 
 
 ## Release History
+
+2015-06-17&nbsp;&nbsp;&nbsp;&nbsp;`v0.5.0`&nbsp;&nbsp;&nbsp;&nbsp;add Promise.race
 
 2015-06-17&nbsp;&nbsp;&nbsp;&nbsp;`v0.4.0`&nbsp;&nbsp;&nbsp;&nbsp;add Promise.deferred
 

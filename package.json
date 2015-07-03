@@ -1,6 +1,6 @@
 {
     "name": "promise-a-plus",
-    "version": "0.4.0",
+    "version": "0.5.0",
     "description": "A JavaScript Promise/A+ Library.",
     "main": "promise.js",
     "devDependencies": {
@@ -11,7 +11,8 @@
         "test": "promises-aplus-tests test_adapter.js && npm run customTest",
         "customTest": "./node_modules/.bin/mocha -t 800",
         "customTestCatch": "./node_modules/.bin/mocha test/test_catch.js -t 800",
-        "customTestAll": "./node_modules/.bin/mocha test/test_all.js -t 800"
+        "customTestAll": "./node_modules/.bin/mocha test/test_all.js -t 800",
+        "customTestRace": "./node_modules/.bin/mocha test/test_race.js -t 1200"
     },
     "keywords": [
         "promise",
