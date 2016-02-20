@@ -5,7 +5,29 @@ describe('Custom Promise Test', function() {
 
     describe('#Promise.all', function() {
 
-        describe('arguments is array of primitives.', function() {
+        describe('argument is empty string.', function() {
+
+            it('should return a promise with empty array as its value', function(done) {
+                Promise.all('').then(function(v) {
+                    assert.deepEqual(v, []);
+                    done();
+                });
+            });
+
+        });
+
+        describe('argument is empty array.', function() {
+
+            it('should return a promise with empty array as its value', function(done) {
+                Promise.all('').then(function(v) {
+                    assert.deepEqual(v, []);
+                    done();
+                });
+            });
+
+        });
+
+        describe('argument is array of primitives.', function() {
 
             it('should return a promise with all primitives as its value', function(done) {
                 Promise.all([1, 'yes', true, null]).then(function(v) {
@@ -16,7 +38,7 @@ describe('Custom Promise Test', function() {
 
         });
 
-        describe('arguments is array of promises.', function() {
+        describe('argument is array of promises.', function() {
 
             it('should return a promise with all promises\' values as its value', function(done) {
                 Promise.all([Promise.resolve('x'), Promise.resolve(null), Promise.resolve(true), Promise.resolve([1, 2, 3])]).then(function(v) {
@@ -35,7 +57,7 @@ describe('Custom Promise Test', function() {
         });
 
 
-        describe('arguments is array mixed of primitives and promises.', function() {
+        describe('argument is array mixed of primitives and promises.', function() {
 
             it('should return a promise with primitives and promises\' values as its value', function(done) {
                 Promise.all([1, 'yes', Promise.resolve({x: 1}), Promise.resolve(null)]).then(function(v) {
