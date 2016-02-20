@@ -5,6 +5,19 @@ describe('Custom Promise Test', function() {
 
     describe('#Promise.race', function() {
 
+        describe('argument is not iterable.', function() {
+
+            it('should throw error', function(done) {
+                try {
+                    Promise.race();
+                    done('should not invoke');
+                } catch (e) {
+                    done();
+                }
+            });
+
+        });
+
         describe('argument is array of primitives.', function() {
 
             it('should return a promise with the first primitive as its value', function(done) {

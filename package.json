@@ -1,35 +1,38 @@
 {
-    "name": "promise-a-plus",
-    "version": "0.5.1",
-    "description": "A JavaScript Promise/A+ Library.",
-    "main": "promise.js",
-    "devDependencies": {
-        "promises-aplus-tests": "*",
-        "mocha": "*"
-    },
-    "scripts": {
-        "test": "promises-aplus-tests test_adapter.js && npm run customTest",
-        "customTest": "./node_modules/.bin/mocha -t 800",
-        "customTestCatch": "./node_modules/.bin/mocha test/test_catch.js -t 800",
-        "customTestAll": "./node_modules/.bin/mocha test/test_all.js -t 800",
-        "customTestRace": "./node_modules/.bin/mocha test/test_race.js -t 1200"
-    },
-    "keywords": [
-        "promise",
-        "native-promise",
-        "Promise/A+"
-    ],
-    "repository": {
-        "type": "git",
-        "url": "git@github.com:creeperyang/promise-a-plus.git"
-    },
-    "engines": {
-        "node": ">= 0.8.0"
-    },
-    "author": {
-        "name": "creeperyang",
-        "email": "pashanhu6@hotmail.com",
-        "url": "http://creeperyang.github.io"
-    },
-    "license": "MIT"
+  "name": "promise-a-plus",
+  "version": "0.5.1",
+  "description": "A JavaScript Promise/A+ Library.",
+  "main": "promise.js",
+  "devDependencies": {
+    "mocha": "^2.4.5",
+    "promises-aplus-tests": "^2.1.1"
+  },
+  "scripts": {
+    "test": "node_modules/.bin/promises-aplus-tests test_adapter.js && npm run customTest",
+    "cover-offical": "node_modules/.bin/istanbul cover --dir coverage/offical -x test_adapter.js node_modules/.bin/promises-aplus-tests test_adapter.js",
+    "cover-custom": "node_modules/.bin/istanbul cover --dir coverage/custom _mocha",
+    "cover": "npm run cover-custom && npm run cover-offical && node_modules/.bin/istanbul report",
+    "customTest": "./node_modules/.bin/mocha -t 800",
+    "customTestCatch": "./node_modules/.bin/mocha test/test_catch.js -t 800",
+    "customTestAll": "./node_modules/.bin/mocha test/test_all.js -t 800",
+    "customTestRace": "./node_modules/.bin/mocha test/test_race.js -t 1200"
+  },
+  "keywords": [
+    "promise",
+    "native-promise",
+    "Promise/A+"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:creeperyang/promise-a-plus.git"
+  },
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "author": {
+    "name": "creeperyang",
+    "email": "pashanhu6@hotmail.com",
+    "url": "http://creeperyang.github.io"
+  },
+  "license": "MIT"
 }

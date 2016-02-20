@@ -5,6 +5,19 @@ describe('Custom Promise Test', function() {
 
     describe('#Promise.all', function() {
 
+        describe('argument is not iterable.', function() {
+
+            it('should throw error', function(done) {
+                try {
+                    Promise.all();
+                    done('should not invoke');
+                } catch (e) {
+                    done();
+                }
+            });
+
+        });
+
         describe('argument is empty string.', function() {
 
             it('should return a promise with empty array as its value', function(done) {
@@ -55,7 +68,6 @@ describe('Custom Promise Test', function() {
             });
 
         });
-
 
         describe('argument is array mixed of primitives and promises.', function() {
 
