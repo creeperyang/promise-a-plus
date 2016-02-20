@@ -201,8 +201,8 @@ Promise.all = function(iterable) {
     if(iterable == null || typeof iterable.length !== 'number') {
         throw new Error('ArgumentsError: argument should be iterable.');
     }
-    return new Promise(function(resolve, reject) {
-        len = iterable.length;
+    len = iterable.length;
+    return len === 0 ? Promise.resolve([]) : new Promise(function(resolve, reject) {
         results = new Array(len);
         for(i = 0; i < len; i++) {
             (function(i) {
@@ -258,7 +258,7 @@ Promise.race = function(iterable) {
 };
 
 /**
- * A useful api for Promise,
+ * Promise.deferred
  * return the `deferred` object binding to a promise. 
  * And you can control the promise via `deferred.resolve`/`deferred.reject`.
  *
