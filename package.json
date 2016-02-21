@@ -5,6 +5,7 @@
   "main": "promise.js",
   "devDependencies": {
     "eslint": "^2.2.0",
+    "istanbul": "^1.0.0-alpha.2",
     "mocha": "^2.4.5",
     "promises-aplus-tests": "^2.1.1"
   },
