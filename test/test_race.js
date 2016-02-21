@@ -2,11 +2,8 @@ var assert = require('assert');
 var Promise = require('../promise.js');
 
 describe('Custom Promise Test', function() {
-
     describe('#Promise.race', function() {
-
         describe('argument is not iterable.', function() {
-
             it('should throw error', function(done) {
                 try {
                     Promise.race();
@@ -15,11 +12,9 @@ describe('Custom Promise Test', function() {
                     done();
                 }
             });
-
         });
 
         describe('argument is array of primitives.', function() {
-
             it('should return a promise with the first primitive as its value', function(done) {
                 Promise.race([1, 'yes', true, null]).then(function(v) {
                     assert.equal(v, 1);
@@ -33,7 +28,6 @@ describe('Custom Promise Test', function() {
                     done();
                 });
             });
-
         });
 
         describe('argument\'s length is 0.', function() {
@@ -57,13 +51,12 @@ describe('Custom Promise Test', function() {
         });
 
         describe('argument is array of promises.', function() {
-
             it('should return a promise with the first resolved promise\'s value as its value', function(done) {
-                var p1 = new Promise(function(resolve, reject) { 
-                    setTimeout(resolve, 500, 'one'); 
+                var p1 = new Promise(function(resolve, reject) {
+                    setTimeout(resolve, 500, 'one');
                 });
-                var p2 = new Promise(function(resolve, reject) { 
-                    setTimeout(resolve, 100, 'two'); 
+                var p2 = new Promise(function(resolve, reject) {
+                    setTimeout(resolve, 100, 'two');
                 });
                 Promise.race([p1, p2]).then(function(v) {
                     assert.equal(v, 'two');
@@ -72,19 +65,17 @@ describe('Custom Promise Test', function() {
             });
 
             it('should return a promise with the first rejected promise\'s reason as its reason', function(done) {
-                var p1 = new Promise(function(resolve, reject) { 
-                    setTimeout(reject, 500, 'one'); 
+                var p1 = new Promise(function(resolve, reject) {
+                    setTimeout(reject, 500, 'one');
                 });
-                var p2 = new Promise(function(resolve, reject) { 
-                    setTimeout(reject, 100, 'two'); 
+                var p2 = new Promise(function(resolve, reject) {
+                    setTimeout(reject, 100, 'two');
                 });
                 Promise.race([p1, p2]).catch(function(r) {
                     assert.equal(r, 'two');
                     done();
                 });
             });
-
         });
-
     });
 });

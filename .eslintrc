@@ -1,0 +1,38 @@
+{
+    "env": {
+        "node": true,
+        "es6": false
+    },
+    "rules": {
+        /// 
+        /// Code style
+        /// 
+        "indent": [2, 4, {"SwitchCase": 1}], // switch with indent
+        "no-trailing-spaces": [2, { "skipBlankLines": true }],
+        "eol-last": [2],
+        "quotes": [2, "single"],
+        "key-spacing": [2, {
+            "beforeColon": false,
+            "afterColon": true
+        }],
+        "linebreak-style": [2, "unix"],
+        "no-new-object": [2],
+        "no-unneeded-ternary": [2],
+        "semi": [2, "always"],
+        "semi-spacing": [2, {"before": false, "after": true}],
+        "keyword-spacing": [2, {"before": true, "after": true, "overrides": {}}],
+        "space-before-function-paren": [2, "never"],
+        "no-multiple-empty-lines": 0,
+        "spaced-comment": [1, "always", { "markers": ["global", "globals", "eslint", "eslint-disable", "*package", "!", ","] }],
+        "padded-blocks": [1, "never"],
+        // enforces a space inside of curly braces
+        "object-curly-spacing": [2, "always"],
+
+        ///
+        /// Best Practices
+        /// 
+        "eqeqeq": [2, "smart"],
+        // allow/warn the use of nested ternary expressions
+        "no-nested-ternary": 1
+    }
+}

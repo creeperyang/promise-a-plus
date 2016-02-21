@@ -4,10 +4,12 @@
   "description": "A JavaScript Promise/A+ Library.",
   "main": "promise.js",
   "devDependencies": {
+    "eslint": "^2.2.0",
     "mocha": "^2.4.5",
     "promises-aplus-tests": "^2.1.1"
   },
   "scripts": {
+    "lint": "node_modules/.bin/eslint promise.js test/*.js test_adapter.js",
     "test": "node_modules/.bin/promises-aplus-tests test_adapter.js && npm run customTest",
     "cover-offical": "node_modules/.bin/istanbul cover --dir coverage/offical -x test_adapter.js node_modules/.bin/promises-aplus-tests test_adapter.js",
     "cover-custom": "node_modules/.bin/istanbul cover --dir coverage/custom _mocha",

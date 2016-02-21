@@ -189,25 +189,25 @@ Promise.reject = function(reason) {
  * Promise.all
  * returns a promise that resolves when all of the promises in the iterable argument
  * have resolved, or rejects with the reason of the first passed promise that rejects.
- * 
+ *
  * support Promise.all(''), Promise.all(promises) and so on.
- * 
+ *
  * @param  {Iterable} iterable iterable object, like Array, String
  * @return {Promise}           promise
  */
 Promise.all = function(iterable) {
     var results, len, promise, i;
     var resolved = 0;
-    if(iterable == null || typeof iterable.length !== 'number') {
+    if (iterable == null || typeof iterable.length !== 'number') {
         throw new Error('ArgumentsError: argument should be iterable.');
     }
     len = iterable.length;
     return len === 0 ? Promise.resolve([]) : new Promise(function(resolve, reject) {
         results = new Array(len);
-        for(i = 0; i < len; i++) {
+        for (i = 0; i < len; i++) {
             (function(i) {
                 promise = iterable[i];
-                if(!(promise instanceof Promise)) {
+                if (!(promise instanceof Promise)) {
                     promise = Promise.resolve(promise);
                 }
                 promise.catch(function(reason) {
@@ -215,7 +215,7 @@ Promise.all = function(iterable) {
                 });
                 promise.then(function(value) {
                     results[i] = value;
-                    if(++resolved === len) {
+                    if (++resolved === len) {
                         resolve(results);
                     }
                 });
@@ -226,23 +226,23 @@ Promise.all = function(iterable) {
 
 /**
  * Promise.race
- * Returns a promise that resolves or rejects as soon as one of the promises 
- * in the iterable resolves or rejects, 
+ * Returns a promise that resolves or rejects as soon as one of the promises
+ * in the iterable resolves or rejects,
  * with the value or reason from that promise.
- * 
+ *
  * @param  {Iterable} iterable iterable object, like Array, String
  * @return {Promise}           promise
  */
 Promise.race = function(iterable) {
     var deferred, len, i, promise;
-    if(iterable == null || typeof iterable.length !== 'number') {
+    if (iterable == null || typeof iterable.length !== 'number') {
         throw new Error('ArgumentsError: argument should be iterable.');
     }
     deferred = Promise.deferred();
     len = iterable.length;
-    for(i = 0; i < len; i++) {
+    for (i = 0; i < len; i++) {
         promise = iterable[i];
-        if(promise instanceof Promise) {
+        if (promise instanceof Promise) {
             promise.then(function(value) {
                 deferred.resolve(value);
             }, function(reason) {
@@ -259,7 +259,7 @@ Promise.race = function(iterable) {
 
 /**
  * Promise.deferred
- * return the `deferred` object binding to a promise. 
+ * return the `deferred` object binding to a promise.
  * And you can control the promise via `deferred.resolve`/`deferred.reject`.
  *
  * @param {Promise|Any} value
