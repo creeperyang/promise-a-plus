@@ -7,7 +7,7 @@
 [![devDependency Status](https://david-dm.org/creeperyang/promise-a-plus/dev-status.svg)](https://david-dm.org/creeperyang/promise-a-plus#info=devDependencies)
 [![npm](https://img.shields.io/npm/dm/promise-a-plus.svg)](https://www.npmjs.com/package/promise-a-plus)
 
-This is a pure JavaScript implementation of ＊Promises＊. It is a polyfill for ＊ES2015 Promises＊ and well tested.
+This is a pure JavaScript implementation of *Promises*. It is a polyfill for *ES2015 Promises* and well tested.
 
 **Note**: The implementation is surely [Promises/A+](https://promisesaplus.com/) conformant, so it will work well with other promises libraries.
 

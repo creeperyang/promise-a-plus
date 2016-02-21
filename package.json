@@ -1,6 +1,6 @@
 {
   "name": "promise-a-plus",
-  "version": "0.5.1",
+  "version": "0.6.0",
   "description": "A JavaScript Promise/A+ Library.",
   "main": "promise.js",
   "devDependencies": {
@@ -23,6 +23,7 @@
   "keywords": [
     "promise",
     "native-promise",
+    "promise-a-plus",
     "Promise/A+"
   ],
   "repository": {
