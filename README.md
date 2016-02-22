@@ -7,9 +7,15 @@
 [![devDependency Status](https://david-dm.org/creeperyang/promise-a-plus/dev-status.svg)](https://david-dm.org/creeperyang/promise-a-plus#info=devDependencies)
 [![npm](https://img.shields.io/npm/dm/promise-a-plus.svg)](https://www.npmjs.com/package/promise-a-plus)
 
-This is a pure JavaScript implementation of *Promises*. It is a polyfill for *ES2015 Promises* and well tested.
+<a href="https://promisesaplus.com/">
+    <img src="https://promisesaplus.com/assets/logo-small.png" alt="Promises/A+ logo"
+         title="Promises/A+ 1.0 compliant" align="right" />
+</a>
 
-**Note**: The implementation is surely [Promises/A+](https://promisesaplus.com/) conformant, so it will work well with other promises libraries.
+This is a JavaScript implementation of [*Promises/A+* spec](https://github.com/promises-aplus/promises-spec), and adequately tested.
+
+Also a full featured polyfill for *ES6 Promise*.
+
 
 ## Install
 
@@ -20,8 +26,11 @@ This is a pure JavaScript implementation of *Promises*. It is a polyfill for *ES
 ```js
 var Promise = require('promise-a-plus');
 
-Promise.race([promise1, promise2]);
-Promise.resolve('nice');
+var promise1 = Promise.resolve('nice');
+var promise2 = new Promise(function(resolve, reject) {
+   reject('just rejected');
+});
+Promise.race([promise1, promise2]).then(console.log.bind(console));
 ```
 
 If you want to use in browser, use tools like `webpack` or `browserify`.
