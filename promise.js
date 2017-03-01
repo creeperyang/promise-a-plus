@@ -4,6 +4,13 @@ var PENDING = 0;
 var FULFILLED = 1;
 var REJECTED = 2;
 
+var nextTick = setTimeout;
+if (typeof setImmediate === 'function') {
+    nextTick = setImmediate;
+} else if (typeof process === 'object' && typeof process.nextTick === 'function') {
+    nextTick = process.nextTick;
+}
+
 function Promise(executor) {
     var state = PENDING;
 
@@ -59,7 +66,7 @@ function Promise(executor) {
 
     this.done = function(onFulfilled, onRejected) {
         // ensure we are always asynchronous
-        setTimeout(function() {
+        nextTick(function() {
             handle({
                 onFulfilled: onFulfilled,
                 onRejected: onRejected
@@ -150,7 +157,7 @@ function doResolve(fn, onFulfilled, onRejected) {
                 return;
             }
             done = true;
-            setTimeout(function() {
+            nextTick(function() {
                 onFulfilled(value);
             }, 0);
         }, function(reason) {
@@ -158,7 +165,7 @@ function doResolve(fn, onFulfilled, onRejected) {
                 return;
             }
             done = true;
-            setTimeout(function() {
+            nextTick(function() {
                 onRejected(reason);
             }, 0);
         });
@@ -167,7 +174,7 @@ function doResolve(fn, onFulfilled, onRejected) {
             return;
         }
         done = true;
-        setTimeout(function() {
+        nextTick(function() {
             onRejected(e);
         }, 0);
     }
