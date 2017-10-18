@@ -8,8 +8,7 @@
 [![npm](https://img.shields.io/npm/dm/promise-a-plus.svg)](https://www.npmjs.com/package/promise-a-plus)
 
 <a href="https://promisesaplus.com/">
-    <img src="https://promisesaplus.com/assets/logo-small.png" alt="Promises/A+ logo"
-         title="Promises/A+ 1.0 compliant" align="right" />
+    <img src="https://promisesaplus.com/assets/logo-small.png" alt="Promises/A+ logo" title="Promises/A+ 1.0 compliant" align="right" />
 </a>
 
 This is a JavaScript implementation of [*Promises/A+* spec](https://github.com/promises-aplus/promises-spec), and adequately tested.

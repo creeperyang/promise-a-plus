@@ -1,24 +1,27 @@
 {
   "name": "promise-a-plus",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "description": "A JavaScript Promise/A+ Library.",
   "main": "promise.js",
   "devDependencies": {
+    "bluebird": "^3.3.1",
     "eslint": "^2.2.0",
     "istanbul": "^1.0.0-alpha.2",
-    "mocha": "^2.4.5",
-    "promises-aplus-tests": "^2.1.1"
+    "matcha": "^0.6.1",
+    "mocha": "^3.5.3",
+    "promises-aplus-tests": "^2.1.2"
   },
   "scripts": {
-    "lint": "node_modules/.bin/eslint promise.js test/*.js test_adapter.js",
-    "test": "node_modules/.bin/promises-aplus-tests test_adapter.js && npm run customTest",
-    "cover-offical": "node_modules/.bin/istanbul cover --dir coverage/offical -x test_adapter.js node_modules/.bin/promises-aplus-tests test_adapter.js",
-    "cover-custom": "node_modules/.bin/istanbul cover --dir coverage/custom _mocha",
-    "cover": "npm run cover-custom && npm run cover-offical && node_modules/.bin/istanbul report",
-    "customTest": "./node_modules/.bin/mocha -t 800",
-    "customTestCatch": "./node_modules/.bin/mocha test/test_catch.js -t 800",
-    "customTestAll": "./node_modules/.bin/mocha test/test_all.js -t 800",
-    "customTestRace": "./node_modules/.bin/mocha test/test_race.js -t 1200"
+    "lint": "eslint promise.js test/*.js test_adapter.js benchmark/*.js",
+    "test": "promises-aplus-tests test_adapter.js && npm run customTest",
+    "cover-offical": "istanbul cover --dir coverage/offical -x test_adapter.js promises-aplus-tests test_adapter.js",
+    "cover-custom": "istanbul cover --dir coverage/custom _mocha",
+    "cover": "npm run cover-custom && npm run cover-offical && istanbul report",
+    "customTest": "mocha -t 800",
+    "customTestCatch": "mocha test/test_catch.js -t 800",
+    "customTestAll": "mocha test/test_all.js -t 800",
+    "customTestRace": "mocha test/test_race.js -t 1200",
+    "benchmark": "matcha benchmark/*.js"
   },
   "keywords": [
     "promise",
